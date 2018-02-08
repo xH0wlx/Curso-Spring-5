@@ -5,7 +5,7 @@ import java.util.Map;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
+//import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 
-import com.cursospringangular.datajpa.app.models.dao.IClienteDao;
+//import com.cursospringangular.datajpa.app.models.dao.IClienteDao;
 import com.cursospringangular.datajpa.app.models.entity.Cliente;
 import com.cursospringangular.datajpa.app.models.service.IClienteService;
 
@@ -24,9 +24,9 @@ import com.cursospringangular.datajpa.app.models.service.IClienteService;
 @SessionAttributes("cliente")
 public class ClienteController {
 
-	@Autowired
-	@Qualifier("clienteDaoJpa") // Cuando hay más de un componente el autowired genera ambigüedad.
-	private IClienteDao clienteDao;
+	//@Autowired
+	//@Qualifier("clienteDaoJpa") // Cuando hay más de un componente el autowired genera ambigüedad.
+	//private IClienteDao clienteDao;
 	
 	@Autowired
 	private IClienteService clienteService;
