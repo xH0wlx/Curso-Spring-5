@@ -22,3 +22,6 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### Propios ###
+src/main/resources/static/uploads/*.jpg

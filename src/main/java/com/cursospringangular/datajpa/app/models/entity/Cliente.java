@@ -19,8 +19,8 @@ import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
-@Table(name="clientes") // Esta notación se puede omitir si la clase se llama igual que la tabla
-public class Cliente implements Serializable{
+@Table(name = "clientes") // Esta notación se puede omitir si la clase se llama igual que la tabla
+public class Cliente implements Serializable {
 
 	/**
 	 * 
@@ -28,9 +28,9 @@ public class Cliente implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue( strategy = GenerationType.IDENTITY )
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	@NotEmpty
 	private String nombre;
 	@NotEmpty
@@ -38,47 +38,66 @@ public class Cliente implements Serializable{
 	@NotEmpty
 	@Email
 	private String email;
-	
+
 	@NotNull
-	@Column( name = "created_at" ) // Esta notación se puede omitir si la variable tiene el mismo nombre de la columna
+	@Column(name = "created_at") // Esta notación se puede omitir si la variable tiene el mismo nombre de la
+									// columna
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern="yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date createdAt;
-	
-	/*@PrePersist
-	public void prePersist() {
-		createdAt = new Date();
-	}*/
-	
+
+	private String foto;
+
+	/*
+	 * @PrePersist public void prePersist() { createdAt = new Date(); }
+	 */
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
+
 	public String getNombre() {
 		return nombre;
 	}
+
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
+
 	public String getApellido() {
 		return apellido;
 	}
+
 	public void setApellido(String apellido) {
 		this.apellido = apellido;
 	}
+
 	public String getEmail() {
 		return email;
 	}
+
 	public void setEmail(String email) {
 		this.email = email;
 	}
+
 	public Date getCreatedAt() {
 		return createdAt;
 	}
+
 	public void setCreatedAt(Date createdAt) {
 		this.createdAt = createdAt;
 	}
-	
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+
 }
