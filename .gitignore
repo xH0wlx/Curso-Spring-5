@@ -25,3 +25,4 @@ nbdist/
 
 ### Propios ###
 src/main/resources/static/uploads/*.jpg
+uploads/*.jpg
