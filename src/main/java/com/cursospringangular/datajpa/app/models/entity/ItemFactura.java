@@ -2,6 +2,7 @@ package com.cursospringangular.datajpa.app.models.entity;
 
 import java.io.Serializable;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -19,12 +20,13 @@ public class ItemFactura implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_item_factura") 
 	private Long id;
 
 	private Integer cantidad;
 	
 	@ManyToOne(fetch=FetchType.LAZY)
-	@JoinColumn(name="producto_id")
+	@JoinColumn(name="producto_id_producto")
 	private Producto producto;
 
 	public Long getId() {

@@ -33,6 +33,7 @@ public class Factura implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_factura") 
 	private Long id;
 	private String descripcion;
 	private String observacion;
@@ -51,7 +52,7 @@ public class Factura implements Serializable {
 
 	// El JoinColumn se agrega por no ser una clase en ambos sentidos.
 	@OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	@JoinColumn(name = "factura_id")
+	@JoinColumn(name = "factura_id_factura")
 	private List<ItemFactura> items;
 
 	public Factura() {

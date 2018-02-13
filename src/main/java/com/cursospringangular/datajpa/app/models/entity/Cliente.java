@@ -34,6 +34,7 @@ public class Cliente implements Serializable {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name = "id_cliente") 
 	private Long id;
 
 	@NotEmpty
@@ -55,7 +56,7 @@ public class Cliente implements Serializable {
 
 	// CascadeType.ALL => Ej: Si el cliente se elimina, se eliminas sus facturas, si se guarda un cliente, se guardan sus facturas.
 	// MappedBy => En la tabla Facturas creará una clave foránea a Cliente
-	@OneToMany(mappedBy="cliente",fetch = FetchType.LAZY, cascade=CascadeType.ALL)
+	@OneToMany(mappedBy="cliente" ,fetch = FetchType.LAZY, cascade=CascadeType.ALL, orphanRemoval = true)
 	private List<Factura> facturas;
 
 	/*
