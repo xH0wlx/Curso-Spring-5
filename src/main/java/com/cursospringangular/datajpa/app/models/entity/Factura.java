@@ -20,6 +20,7 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -36,6 +37,7 @@ public class Factura implements Serializable {
 	@Column(name = "id_factura") 
 	private Long id;
 	
+	@NotEmpty
 	private String descripcion;
 	
 	private String observacion;
