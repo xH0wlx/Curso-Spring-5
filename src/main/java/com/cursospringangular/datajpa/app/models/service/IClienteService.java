@@ -6,6 +6,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import com.cursospringangular.datajpa.app.models.entity.Cliente;
+import com.cursospringangular.datajpa.app.models.entity.Producto;
 
 public interface IClienteService {
 	
@@ -14,4 +15,6 @@ public interface IClienteService {
 	public void save(Cliente cliente);
 	public Cliente findOne(Long id);
 	public void delete(Long id);
+	
+	public List<Producto> findByNombre(String term);
 }
