@@ -85,6 +85,13 @@ public class ClienteServiceImpl implements IClienteService{
 		facturaDao.delete(id);		// facturaDao.deleteById() Spring Boot 2
 	}
 
+	@Override
+	@Transactional(readOnly=true)
+	public Factura fetchFacturaByIdWithClienteWhithItemFacturaWithProducto(Long id) {
+		// TODO Auto-generated method stub
+		return facturaDao.fetchByIdWithClienteWhithItemFacturaWithProducto(id);
+	}
+
 	
 	
 }
