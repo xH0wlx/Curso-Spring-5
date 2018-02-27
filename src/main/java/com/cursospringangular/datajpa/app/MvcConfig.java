@@ -5,6 +5,7 @@ package com.cursospringangular.datajpa.app;
 //import org.slf4j.Logger;
 //import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.ViewControllerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 //import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
@@ -26,5 +27,9 @@ public class MvcConfig implements WebMvcConfigurer{
 		log.info("ResourcePath: " + resourcePath);
 		
 	}*/
+	
+	public void addViewControllers(ViewControllerRegistry registry) {
+		registry.addViewController("/error_403").setViewName("error_403");
+	}
 
 }
