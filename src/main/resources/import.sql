@@ -43,3 +43,10 @@ INSERT INTO factura_items (cantidad, factura_id_factura, producto_id_producto) V
 
 INSERT INTO facturas (descripcion, observacion, cliente_id_cliente, created_at) VALUES ('Factura Bicicleta', 'Alguna nota importante!', 1, NOW());
 INSERT INTO factura_items (cantidad, factura_id_factura, producto_id_producto) VALUES(3, 2, 6);
+
+INSERT INTO users (username, password, enabled) VALUES ('andres', "$2a$10$Dpj.VDx06LmVmS7pJaMWG.Zhz1Od4oUAt..YcctEm4qfwyo0mdmGy", 1);
+INSERT INTO users (username, password, enabled) VALUES ('admin', "$2a$10$deU2qCj5v9EYmwkZbqlt9OodWVpGnB.OPLD9sFQ1qt3FK7c9YP.cO", 1);
+
+INSERT INTO authorities (user_id, authority) VALUES (1, 'ROLE_USER');
+INSERT INTO authorities (user_id, authority) VALUES (2, 'ROLE_ADMIN');
+INSERT INTO authorities (user_id, authority) VALUES (2, 'ROLE_USER');
