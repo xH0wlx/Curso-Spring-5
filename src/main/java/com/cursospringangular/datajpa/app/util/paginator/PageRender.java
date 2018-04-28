@@ -1,4 +1,4 @@
-package com.cursospringangular.datajpa.app.util.paginator;
++-package com.cursospringangular.datajpa.app.util.paginator;
 
 import java.util.ArrayList;
 import java.util.List;

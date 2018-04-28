@@ -11,6 +11,7 @@ import javax.validation.Valid;
 import org.apache.juli.logging.Log;
 import org.apache.juli.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.core.io.Resource;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -25,7 +26,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContext;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestWrapper;
-//import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -50,12 +50,16 @@ import com.cursospringangular.datajpa.app.util.paginator.PageRender;
 public class ClienteController {
 
 	protected final Log logger= LogFactory.getLog(this.getClass());
-	
-	@Autowired
+
+
 	private IClienteService clienteService;
 
-	@Autowired
 	private IUploadFileService uploadFileService;
+
+	public ClienteController(IClienteService clienteService, IUploadFileService uploadFileService){
+		this.clienteService = clienteService;
+		this.uploadFileService = uploadFileService;
+	}
 
 	// Expresión regular para que no trunque la extensión del archivo
 	@Secured({"ROLE_USER"})
